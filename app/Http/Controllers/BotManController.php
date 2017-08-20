@@ -41,7 +41,7 @@ class BotManController extends Controller
     public function getCurrency($currency)
     {
         $client = new Client();
-        $uri = 'http://api.fixer.io/latest?base=' . $currency;
+        $uri = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11';
         $response = $client->get($uri);
         $results = json_decode($response->getBody()->getContents());
         $date = date('d F Y', strtotime($results->date));
